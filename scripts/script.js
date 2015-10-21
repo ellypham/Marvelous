@@ -18,7 +18,7 @@ marvelApp.getCharacters = function(){
         data:{
             apikey: marvelApp.publicKey,
             limit:10,
-            name: "spider-man"
+            // name: "spider-man"
         }
     }).then(function(res){
         var characters = (res.data);
@@ -30,25 +30,15 @@ marvelApp.getCharacters = function(){
 marvelApp.displayCharacters = function(characters) {
     $.each(characters.results, function(i, value){
                var galleryCell = $('<img>').attr('src', value.thumbnail.path +'.' + value.thumbnail.extension);
-//             var time = $('<h4>').addClass('time').text('Preparation time: ' + value.totalTimeInSeconds/60 + ' minutes');
-//             var image = $('<img>').addClass('image').attr('src', value.imageUrlsBySize[90].replace(/s90/g,'s300'));
-//             var ingredientsList = $('<h3>').addClass('ingredientTitle').text('List of Ingredients:');
-//             var ingredients = $('<p>').addClass('ingredientTitle').text(value.ingredients);
-       
-//             var checkbox = $('<input type="checkbox" class="userSelectedRecipe">').val(value.id).addClass('selectedRecipes')
-//             ;
-//             var checkboxText = $('<p>').addClass('addToList').text('Add to Shopping list:').append(checkbox)
-//             ;
-//             var recipeContainer = $('<div>').addClass('displayedRecipe').append(recipeTitle,time, checkboxText, checkbox,  image, ingredientsList, ingredients );
-//             $('#selectedRecipes').append(recipeContainer); 
-               $('.gallery-cell').append(galleryCell); 
-               $('.comic-gallery').flickity({
-                 // options//
-                 cellAlign: 'left',
-                 contain: true,
-                 wrapAround: true
-               });
-});
+               $('.comic-gallery').append(galleryCell); 
+  });
+    $('.comic-gallery').flickity({
+      // options//
+      cellAlign: 'left',
+      imagesLoaded: true,
+      contain: true,
+      wrapAround: true
+    });
 };
 
 

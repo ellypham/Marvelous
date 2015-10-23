@@ -3,22 +3,82 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Marvelous</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300|Cutive+Mono' rel='stylesheet' type='text/css'>
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.min.css"> -->
+	<link rel="stylesheet" href="styles/main.scss">
 </head>
 <body>
-<header>
-	<h1>Marvelous</h1>
-	<h1>I added some stuff</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dolor quaerat aut, esse veritatis, voluptate laboriosam et sequi laborum id ipsam, voluptatem tenetur dolorum voluptates asperiores sint ex assumenda omnis.</p>
-</header>
-<section>
+
+<div class="bodyBackground">
+<div class="wrapper">
+		<section class="comicCharacters1">
+			<div class="character doctorStrange">
+				<div class="overlay1 overDoctorStrange">
+					<h2>Doctor Strange</h2>
+				</div>
+			</div>
+			<div class="character spiderMan">
+				<div class="overlay1 overSpiderMan">
+					<h2>Spider Man</h2>
+				</div>
+			</div>
+			<div class="character thanos">
+				<div class="overlay1 overThanos">
+					<h2>Thanos</h2>
+				</div>
+			</div>
+			<div class="character blackPanther">
+				<div class="overlay1 overBlackPanther">
+					<h2>Black Panther</h2>
+				</div>
+			</div>
+		</section>
+
+		<!-- //Marvel Logo -->
+		<div class="marvelLogo">
+			<h1 class='marvelUniverse'>Marvel Universe</h1>
+			<p class="shimmer">2019</p>
+		</div>
+		<!-- //Marvel Logo  -->
+		<section class="comicCharacters2">
+			<div class="character lukeCage">
+				<div class="overlay2 overLukeCage">
+					<h2>Luke Cage</h2>
+				</div>	
+			</div>
+			<div class="character jessicaJones">
+				<div class="overlay2 overJessicaJones">
+					<h2>Jessica Jones</h2>
+				</div>
+			</div>
+			<div class="character ironFist">
+				<div class="overlay2 overIronFist">
+					<h2>Iron Fist</h2>
+				</div>
+			</div>
+			<div class="character inhumans">
+				<div class="overlay2 overInhumans">
+					<h2>Inhuman</h2>
+				</div>
+			</div>
+		</section>
+
+		<!-- <img src="" alt=""> -->
+		<div id="share-options" class="share-options"></div>
+	</div>
+	<!-- //closing of .wrapper -->
+</div>
+<!-- //closing of .bodyBackground -->
+
+<!-- <section>
 	<div class="comic-gallery">
 	
 	</div>
-</section>
+</section> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.pkgd.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.pkgd.min.js"></script> -->
 <script src="scripts/script.js"></script>
+<script src='scripts/modal-init.js'></script>
+<script src="scripts/modal-window.js"></script>
 </body>
 </html>

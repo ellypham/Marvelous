@@ -35,6 +35,25 @@ h2 {
 	margin-top: 0;
 }
 
+h3{
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+
+h4{
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-size: 01rem;
+	margin: 0;
+	padding: 0;
+}
+
 p {
 	font-size: 1.5rem;
 	font-family:'Oswald', sans-serif;
@@ -243,6 +262,7 @@ div.marvelLogo{
 	color: white;
 	padding: 80px;
 	width: 50px;
+	font-family: 'Oswald', sans-serif;
 }
 
 
@@ -270,6 +290,7 @@ div.marvelLogo{
 	color: white;
 	padding: 80px;
 	width: 50px;
+	font-family: 'Oswald', sans-serif;
 }
 
 .characterCard {
@@ -293,13 +314,42 @@ div.marvelLogo{
 	border: 3px solid #F30A0A ;
 }
 
-
 .share-options {
-	background:red;
+	border:red;
+}
+
+.shareWrapper{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.charName{
+	color: white;
+	font-family: 'Oswald', sans-serif;
+	font-size: 2rem;
+	text-transform: uppercase
+}
+
+.charImage{
+	width: 290px;
+	height: 168px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	border: 3px solid white;
+	margin-right: 20px;
+}
+
+.details1{
+	float: left;
+}
+
+.details{
+	// padding: 20px;
 }
 
 
-
+`
 // //flickity
 // img {
 // 	/*z-index:999999;*/

@@ -65,56 +65,46 @@ marvelApp.characterData = [
 
 marvelApp.publicKey = '6e1457926542a2c765f64c571114fa4e';
 
-marvelApp.init = function(){
-    marvelApp.getCharacters();
-    marvelApp.getComics();
-}; 
 
-marvelApp.getCharacters = function(){
-
-    for (var i = 0; i < marvelApp.characterData.length; i++) {
-      // This is an IIFE
-      // IIFE: Immediately Invoked Function Expression
-    (function(index) {
-    
+marvelApp.getAndDisplayData = function(charNum){
         $.ajax({
-          url: 'http://gateway.marvel.com/v1/public/characters/' + marvelApp.characterData[i].id,
+          url: 'http://gateway.marvel.com/v1/public/characters/' + marvelApp.characterData[charNum].id,
           method: 'GET',
           dataType: 'json',
           data: {
             apikey: marvelApp.publicKey
           }
         }).then(function(res) {
-          console.log(marvelApp.characterData[index].name);
-          console.log(marvelApp.characterData[index].id);
-          console.log('Character image: ' + res.data.results[0].thumbnail.path + '.' + res.data.results[0].thumbnail.extension);
-          console.log(marvelApp.characterData[index].description);
-          console.log(marvelApp.characterData[index].powers);
-          console.log(marvelApp.characterData[index].firstAppearance);
-          console.log("Has appeared in " + res.data.results[0].comics.available + " Marvel comics.")
-          console.log("---BREAK---")
+          $('.charName h1').text(marvelApp.characterData[charNum].name);
+          console.log(marvelApp.characterData[charNum].name);
+          $('.charImage').attr('src', res.data.results[0].thumbnail.path + '.' + res.data.results[0].thumbnail.extension);
+          $('.charDesc').text(marvelApp.characterData[charNum].description);
+          $('.charPower').text(marvelApp.characterData[charNum].powers);
+          $('.charAppear').text(marvelApp.characterData[charNum].firstAppearance);
+          // console.log("Has appeared in " + res.data.results[0].comics.available + " Marvel comics.")
+          marvelApp.getComics(charNum);
         });
-
-    })(i);
-    }
 };
 
-marvelApp.getComics = function(){ 
+marvelApp.getComics = function(charNum){ 
+    console.log("it worked. character is " + marvelApp.characterData[charNum].name)
     $.ajax({
-        url:'http://gateway.marvel.com/v1/public/characters/' + marvelApp.characterData[1].id + '/comics',
+        url:'http://gateway.marvel.com/v1/public/characters/' + marvelApp.characterData[charNum].id + '/comics',
         method: 'GET',
         dataType: 'json',
         data:{
             apikey: marvelApp.publicKey,
+            limit: 10
         }
     }).then(function(res){
-        for (var i = 0; i < 10; i++) {
-          console.log('---COMIC---');
-          console.log("Comic thumbnail: " + res.data.results[i].thumbnail.path + '.' + res.data.results[i].thumbnail.extension)
-          console.log("Comic link: " + res.data.results[i].urls[0].url)
-        };
-        
-        // marvelApp.displayCharacters(res);
+      console.log(res);
+        // for (var i = 0; i < 10; i++) {
+          $('gallery-cell1').attr('src', 'assets/drstrange.jpg');
+
+          console.log(res.data.results[1].thumbnail.path + '.' + res.data.results[1].thumbnail.extension);
+          // console.log("Comic thumbnail: " + )
+          // console.log("Comic link: " + res.data.results[i].urls[0].url)
+        // };
     });
 };
 
@@ -133,7 +123,32 @@ marvelApp.getComics = function(){
 // };
 
 
-
+marvelApp.init = function() {
+  $('.doctorStrange').on('click', function() {
+    marvelApp.getAndDisplayData(0);
+  });
+  $('.spiderMan').on('click', function() {
+    marvelApp.getAndDisplayData(1);
+  });
+  $('.thanos').on('click', function() {
+    marvelApp.getAndDisplayData(2);
+  });
+  $('.blackPanther').on('click', function() {
+    marvelApp.getAndDisplayData(3);
+  });
+  $('.lukeCage').on('click', function() {
+    marvelApp.getAndDisplayData(4);
+  });
+  $('.jessicaJones').on('click', function() {
+    marvelApp.getAndDisplayData(5);
+  });
+  $('.ironFist').on('click', function() {
+    marvelApp.getAndDisplayData(6);
+  });
+  $('.inhumans').on('click', function() {
+    marvelApp.getAndDisplayData(7);
+  });
+};
 
 $(function(){
   marvelApp.init();  

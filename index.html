@@ -5,6 +5,7 @@
 	<title>Marvelous</title>
 	<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300|Cutive+Mono' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="styles/flickity.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -64,28 +65,27 @@
 		</section>
 
 		<!-- <img src="" alt=""> -->
-		<div id="share-options" class="share-options">
-			<div class="shareWrapper clearfix">
-				<div class="details1">
-					<div class="charName"><h1></h1></div>
+		<div id="share-options" class="share-options modal hide clearfix">
+			<div class="characterWrapper">
+				<div class="details">
 					<div>
 						<img class="charImage" src="">
 					</div>
+					<div class="comics">
+						<h3 class="charTitle">Comic Appearances:</h3>
+						<div class="gallery charFlickity">
+					</div>
 				</div>
-
-				<div class="details">
-					<h3 class="charTitle">Description:</h3>
-					<h4 class="charDesc"></h3>
-					<h3 class="charTitle">Power:</div>
-					<h4 class="charPower"></h4>
-					<h3 class="charTitle">First Appearance:</div>
-					<h4 class="charAppear"></h4>
-				</div>
-				<h3 class="charTitle">Comics:</h3>
-				<h3 class="charComics"></h3>
-				<div class="gallery charFlickity"></div>
 			</div>
-
+			<div class="details1">
+				<div class="charName"><h1></h1><span class="fa fa-times-circle"></span></div>
+				<h3 class="charTitle">Description:</h3>
+				<p class="charDesc"></p>
+				<h3 class="charTitle">Powers:</h3>
+				<p class="charPower"></p>
+				<h3 class="charTitle">First Appearance:</h3>
+				<p class="charAppear"></p>
+			</div>
 		</div>
 	</div>
 	<!-- //closing of .wrapper -->

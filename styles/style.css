@@ -123,8 +123,6 @@ input[type=checkbox], input[type=radio] {
 
 input[type=search] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -161,8 +159,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -243,22 +239,16 @@ p {
   background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
   background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
   background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
-  -webkit-background-size: 125px 100%;
-  -moz-background-size: 125px 100%;
   background-size: 125px 100%;
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   -webkit-animation-name: shimmer;
-  -moz-animation-name: shimmer;
   -webkit-animation-name: shimmer;
   animation-name: shimmer;
   -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   background-repeat: no-repeat;
@@ -266,34 +256,7 @@ p {
   background-color: #222;
 }
 
-@-moz-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-
 @-webkit-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-
-@-o-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-
-@-ms-keyframes shimmer {
   0% {
     background-position: top left;
   }
@@ -400,8 +363,13 @@ div.marvelLogo {
 }
 
 .comicCharacters1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   margin-top: 20px;
   position: relative;
 }
@@ -416,7 +384,8 @@ div.marvelLogo {
   height: 190px;
   width: 220px;
   text-transform: uppercase;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
 }
 
 .overlay1 h2 {
@@ -427,8 +396,13 @@ div.marvelLogo {
 }
 
 .comicCharacters2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   margin-top: 70px;
   position: relative;
 }
@@ -443,7 +417,8 @@ div.marvelLogo {
   height: 190px;
   width: 220px;
   text-transform: uppercase;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
 }
 
 .overlay2 h2 {

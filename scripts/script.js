@@ -87,7 +87,6 @@ marvelApp.getAndDisplayData = function(charNum){
 };
 
 marvelApp.getComics = function(charNum){ 
-    console.log("it worked. character is " + marvelApp.characterData[charNum].name)
     $.ajax({
         url:'http://gateway.marvel.com/v1/public/characters/' + marvelApp.characterData[charNum].id + '/comics',
         method: 'GET',
@@ -97,29 +96,33 @@ marvelApp.getComics = function(charNum){
             limit: 10
         }
     }).then(function(res){
-      console.log(res);
-        // for (var i = 0; i < 10; i++) {
-          $('gallery-cell1').attr('src', 'assets/drstrange.jpg');
+        console.log(res.data.count);
+      marvelApp.displayComics(res.data.results);
+    });
+};
 
-          console.log(res.data.results[1].thumbnail.path + '.' + res.data.results[1].thumbnail.extension);
-          // console.log("Comic thumbnail: " + )
-          // console.log("Comic link: " + res.data.results[i].urls[0].url)
-        // };
+marvelApp.displayComics = function(comics) {
+    $('.charFlickity').empty();
+    $.each(comics, function(i, item) {
+        console.log(item.thumbnail.path + '.' + item.thumbnail.extension);
+        var comicLink = $('<a>').attr('href', item.urls[0].url).attr('target', "_blank");
+        var comicImage = $('<img>').attr('src', item.thumbnail.path + '.' + item.thumbnail.extension).addClass('flickityItem');
+        comicLink.append(comicImage);
+        $('.charFlickity').append(comicLink);
+    });
+    $('.charFlickity').flickity({
+       cellAlign: 'left',
+       contain: true,
+       imagesLoaded: true,
+       wrapAround: true,
+       lazyLoad: true
     });
 };
 
 // marvelApp.displayCharacters = function(characters) {
 //     $.each(characters.results, function(i, value){
-//                var galleryCell = $('<img>').attr('src', value.thumbnail.path +'.' + value.thumbnail.extension);
 //                $('.comic-gallery').append(galleryCell); 
 //   });
-//     $('.comic-gallery').flickity({
-//       // options//
-//       cellAlign: 'left',
-//       imagesLoaded: true,
-//       contain: true,
-//       wrapAround: true
-//     });
 // };
 
 

@@ -29,7 +29,7 @@ marvelApp.characterData = [
   {
     "id": 1009187,
     "name": "Black Panther",
-    "powers": "T'Challa's senses and physical attributes have been enhanced to superhuman levels by the heart-shaped herb.",
+    "powers": "T'Challa's senes and physical attributes have been enhanced to superhuman levels by the heart-shaped herb.",
     "firstAppearance": "Fantastic Four Vol. 1 #52 (1966)",
     "description": "T'Challa is a brilliant tactician, strategist, scientist, tracker and a master of all forms of unarmed combat whose unique hybrid fighting style incorporates acrobatics and aspects of animal mimicry. T'Challa being a royal descendent of a warrior race is also a master of armed combat, able to use a variety of weapons but prefers unarmed combat. He is a master planner who always thinks several steps ahead and will go to extreme measures to achieve his goals and protect the kingdom of Wakanda."
   },
@@ -111,12 +111,13 @@ marvelApp.displayComics = function(comics) {
         $('.charFlickity').append(comicLink);
     });
     $('.charFlickity').flickity({
-       cellAlign: 'left',
-       contain: true,
+       cellAlign: 'center',
        imagesLoaded: true,
+       contain: true,
        wrapAround: true,
-       lazyLoad: true
+       // lazyLoad: true
     });
+
 };
 
 // marvelApp.displayCharacters = function(characters) {
@@ -125,31 +126,41 @@ marvelApp.displayComics = function(comics) {
 //   });
 // };
 
-
 marvelApp.init = function() {
   $('.doctorStrange').on('click', function() {
     marvelApp.getAndDisplayData(0);
+    $('.modal').removeClass('hide');
   });
   $('.spiderMan').on('click', function() {
     marvelApp.getAndDisplayData(1);
+    $('.modal').removeClass('hide');
   });
   $('.thanos').on('click', function() {
     marvelApp.getAndDisplayData(2);
+    $('.modal').removeClass('hide');
   });
   $('.blackPanther').on('click', function() {
     marvelApp.getAndDisplayData(3);
+    $('.modal').removeClass('hide');
   });
   $('.lukeCage').on('click', function() {
     marvelApp.getAndDisplayData(4);
+    $('.modal').removeClass('hide').addClass('lukeCageModal');
   });
   $('.jessicaJones').on('click', function() {
     marvelApp.getAndDisplayData(5);
+    $('.modal').removeClass('hide');
   });
   $('.ironFist').on('click', function() {
     marvelApp.getAndDisplayData(6);
+    $('.modal').removeClass('hide');
   });
   $('.inhumans').on('click', function() {
     marvelApp.getAndDisplayData(7);
+    $('.modal').removeClass('hide').addClass('inhumansModal');
+  });
+  $('.fa-times-circle').on('click', function() {
+    $('.modal').addClass('hide');
   });
 };
 

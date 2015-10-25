@@ -18,14 +18,14 @@ font-family: 'Cutive Mono';
 HEADER FONT:
 font-family: 'Oswald', sans-serif;
 ************/
-
+// new stuff being adedd
 html {
 	font-size: 62.5%;
 }
 
 .yellow {
 	color: yellow;
-	background: purple;
+	background: black;
 }
 
 h1 {
@@ -353,11 +353,17 @@ div.marvelLogo{
 	// padding: 20px;
 }
 
-
-
-// making images in flickity gallery take up 100% of the space regardless of size
-
-img.flickityItem{
-	height: 100%;
+/***********
+FLICKITY IMAGES
+**************/
+img {
+  width: 200px;
 }
 
+body > div > div > div.gallery.charFlickity {
+  width:600px;
+}
+
+/***********
+END OF FLICKITY IMAGES
+**************/

@@ -123,8 +123,6 @@ input[type=checkbox], input[type=radio] {
 
 input[type=search] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -161,8 +159,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -189,7 +185,7 @@ html {
 }
 
 h1 {
-  font-size: 10rem;
+  font-size: 4rem;
   margin: 0 auto;
   color: white;
 }
@@ -219,13 +215,6 @@ h4 {
   padding: 0;
 }
 
-p {
-  font-size: 1.5rem;
-  font-family: 'Oswald', sans-serif;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
-
 /*//Shimmer Effect*/
 .shimmer {
   /* styling stuff */
@@ -243,22 +232,16 @@ p {
   background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
   background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
   background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
-  -webkit-background-size: 125px 100%;
-  -moz-background-size: 125px 100%;
   background-size: 125px 100%;
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   -webkit-animation-name: shimmer;
-  -moz-animation-name: shimmer;
   -webkit-animation-name: shimmer;
   animation-name: shimmer;
   -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   background-repeat: no-repeat;
@@ -266,34 +249,7 @@ p {
   background-color: #222;
 }
 
-@-moz-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-
 @-webkit-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-
-@-o-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-
-@-ms-keyframes shimmer {
   0% {
     background-position: top left;
   }
@@ -400,8 +356,13 @@ div.marvelLogo {
 }
 
 .comicCharacters1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   margin-top: 20px;
   position: relative;
 }
@@ -416,7 +377,8 @@ div.marvelLogo {
   height: 190px;
   width: 220px;
   text-transform: uppercase;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
 }
 
 .overlay1 h2 {
@@ -427,8 +389,13 @@ div.marvelLogo {
 }
 
 .comicCharacters2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   margin-top: 70px;
   position: relative;
 }
@@ -443,7 +410,8 @@ div.marvelLogo {
   height: 190px;
   width: 220px;
   text-transform: uppercase;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
 }
 
 .overlay2 h2 {
@@ -467,42 +435,112 @@ div.marvelLogo {
   color: white;
 }
 
+.hide{
+  display:none;
+}
+
+/***************
+MODAL
+***************/
+
 .modal {
-  position: absolute;
+  position: fixed;
+  bottom:1%;
+  left:12%;
   z-index: 1000;
-  background-color: #222222;
-  border: 3px solid #F30A0A;
-}
-
-.share-options {
-  border: red;
-}
-
-.shareWrapper {
-  width: 90%;
+  background-color: #1D2E3E;
+  border: 6px ridge #F30A0A;
+  width: 70%;
   margin: 0 auto;
-  margin-top: 20px;
 }
 
+/***********
+FLICKITY IMAGES
+**************/
+img {
+  width: 140px;
+}
+
+/***********
+END OF FLICKITY IMAGES
+**************/
+
+.fa-times-circle {
+  font-size:4rem;
+  color:lightgrey;
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
+.fa-times-circle:hover {
+  cursor: pointer; cursor: hand;
+}
+
+.inhumansModal, .lukeCageModal {
+  width:80%;
+  height:98vh;
+  left:10%;
+}
+
+.inhumansModal.charFlickity img {
+ width:100px;
+}
+
+.inhumansModal.details, .lukeCageModal.details {
+  width:40%;
+}
+
+.inhumansModal.details1, .lukeCageModal.details1 {
+  width:55%;
+}
+
+.modal h3 {
+  color:#F30A0A;
+}
 .charName {
   color: white;
   font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
+.charName H1 {
+  display: inline-block;
+}
+
 .charImage {
-  width: 50%;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  border: 3px solid white;
-  margin-right: 20px;
+  border: 9px solid white;
+  width:100%;
+}
+
+.details, .details1 {
+  float:left;
+}
+
+.details {
+  padding:1%;
+  padding-left: 2%;
+  width:45%;
 }
 
 .details1 {
-  float: left;
+    padding-left: 1%;
+    width: 52.5%;
+    float:left;
 }
 
-img.flickityItem {
-  height: 100%;
+p {
+  font-family: 'Cutive Mono';
+  font-size:1.5rem;
+  color:white;
+  line-height:2rem;
 }
+
+.comics h3{
+  text-align: center;
+}
+h3 {
+  font-size:1.8rem;
+}
+
